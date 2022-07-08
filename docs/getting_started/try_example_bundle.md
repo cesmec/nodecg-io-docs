@@ -53,18 +53,18 @@ If you are logging in for the first time you will have to set your password.
 
 ![Log in screen](../assets/log_in_screen.png)
 
-Else you simply have to log in with your previously chosen password.
+Otherwise, you simply have to log in with your previously chosen password.
 
-Now you are looking at the `nodecg-io` config menu. It should look like this:
+Now you are looking at the `nodecg-io` dashboard. It should look like this:
 
-![`nodcg-io` config menu](../assets/nodcg-io-dashboard.png)
+![`nodcg-io` dashboard](../assets/nodcg-io-dashboard.png)
+
+These bundles on the right side will only be listed if you have installed the
+samples as described at the start of this page.
 
 ## Step 3: Learning how to use the GUI
 
-The current GUI is just intended to make the project usable, but it is not very
-user-friendly. As a more long term solution, a new GUI will be developed that
-also focuses on user experience. Until the new GUI is developed, you will have
-to arrange yourself with this one. So, to get started:
+The GUI that you see now is split into multiple sections that are described below.
 
 ![`nodcg-io` colour coded](../assets/nodcg-io-colored.png)
 
@@ -73,53 +73,57 @@ to arrange yourself with this one. So, to get started:
 Here you will find every NodeCG-bundle that has a dashboard. Here you may select
 the [nodecg-io-debug](../samples/debug.md)-dashboard, if it is installed.
 
-### In <span style="color:#b6b61c">yellow</span>: Monaco editor
-
-It is basically only a text editor which is used to save configurations for
-service instances.
-
 ### In <span style="color:#21885c">green</span>: Services section
 
-Here you may create, update and delete instances of a service. Each instance has
-its own name and configuration. The menu will expand depending on the option
-selected in the first dropdown.
+Here on the left side you may create, update and delete instances of a service.
+Each instance has its own name and configuration. All existing instances are listed
+in this section and can be filtered using the `'Search'` field right below the
+section title.
 
 _Creating a new service instance_:
 
-This can be accomplished by selecting the item `'New'`. Then a new dropdown will
-be revealed, in witch you may select the service type. Additionally, you must
-select an instance name. Then click `'Create'`. The newly created instance
-should be selected.
+This can be accomplished by clicking the floating action button with the `'+'`
+sign in the bottom right of the services section. This will open a dialog where
+you can enter the name of the new instance and select its service type. Then click
+on `'Create'`. The newly created instance should now open a dialog for configuration
+if it needs to be configured.
 
 _Configure a service instance_:
 
-While a supported service instance is selected, you may change the config in
-monaco, then click `'Save'`.
+A newly created instance will automatically open its config dialog, or you can
+click on an existing instance from the list to open its configuration. A warning
+sign next to the instance name shows that the service needs to be configured as seen
+on the `'example'` instance in the image above.
+
+This dialog consists of a text editor which provides auto-completion for the
+JSON-configuration of the current service instance. After changing the config, you
+may save the changes by clicking the `'Save'` button or pressing `Ctrl`+`S`. To
+discard the changes, press the `'Cancel'` button or `Esc`.
 
 _Deleting a service instance_:
 
-This can be accomplished by selecting an existing instance. Then click
-`'Delete Instance'`.
+This can be accomplished by clicking the red button with the delete symbol on an
+existing instance. This will open a dialog to confirm the deletion.
 
 ### In <span style="color:#69318e">violet</span>: Bundles section
 
-This section has three dropdowns:
+This section also has a `'Search'` field to filter the existing bundles. Every
+entry has the bundle name as its title and a dropdown for each service that it
+needs. Using these dropdowns you can select which instance it should use, or you can
+unset the dependency by pressing the `'x'` that appears when hovering over the
+dropdown.
 
-1. Bundle: Here you can select a bundle to configure.
-2. Service: If this bundle uses more than one service, you may select the
-   service to set or unset here.
-3. Service Instance: Here you can select one instance of the service type set at
-   2 or `none`.
+When all services of a bundle are set, it shows up as active and moves to the start
+of the list as shown in the image using the `'github'` bundle as an example.
 
-### In <span style="color:#b71424">red</span>: Unset all Button
+### Narrow window
 
-This button will set the service instance for every bundle/service combination
-to none, effectively removing the access to every service from all bundles.
+On a narrow window, the Services and Bundles section span the full width of the
+browser. You can switch between the two sections using the tabs named
+`'Services'` and `'Bundles'` just above the title as highlighted in
+<span style="color:#b6b61c">yellow</span> in the following image.
 
-!!! DANGER
-
-    This can not be undone, and you will have to set up all the bundles
-    again. __The service instances will be unaffected.__
+![`nodcg-io` dashboard tabs](../assets/nodcg-io-dashboard-tabs.png)
 
 ## Step 4: Configure the sample
 
